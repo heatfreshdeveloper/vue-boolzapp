@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*************************Sezione tag */
+
+body {
+    background-color: #dddbd2;
+}
+
+/*************************Sezione classi */
+
+.green-screen {
+    background-color: #0b9688;
+    width: 100%;
+    height: 150px;
+}
+
+/* Sezione laterale del main box chat*/
+
+.chatlist {
+    width: 35%;
+}
+
+.user-account {
+    min-height: 50px;
+    background-color: #eaeaea;
+}
+
+.user-account-image {
+    display: inline-block;
+    max-width: 20%;
+}
+
+.user-account-image img {
+    width: 100%;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.user-account-name {
+    display: inline-block;
+}
+
+.user-account-name p {
+    display: inline-block;
+}
+
+.user-account-icons {
+    display: inline-block;
+}
+
+.user-account-icons i {
+    display: inline-block;
+    font-size: 1.5 rem;
+}
+
+
+/*************************Sezione ID */
+
+
