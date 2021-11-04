@@ -10,6 +10,13 @@ body {
     background-color: #dddbd2;
 }
 
+input {
+    font-size: 11px;
+    padding: 5px;
+    width: 85%;
+    border: 1px solid lightgray;
+}
+
 /*************************Sezione classi */
 
 .green-screen {
@@ -49,14 +56,138 @@ body {
 }
 
 .user-account-icons {
-    display: inline-block;
+    display:inline-block;
 }
 
 .user-account-icons i {
     display: inline-block;
     font-size: 1.5 rem;
+    vertical-align: middle;
+    line-height: 31px;
+    color: grey;
 }
 
+.notify {
+    background-color: #8fdafa;
+}
+
+.notify-icon {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    padding: 13px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.notify-icon i {
+    color: #8fdafa;
+    font-size: 1.25rem;
+}
+
+.notify-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 8px;
+}
+
+.notify-text :nth-child(2) {
+    font-size: 12px;
+}
+
+.notify-text :nth-child(2) a {
+    color: grey;
+}
+
+.search-box {
+    background-color: white;
+    padding: 2px;
+    display: inline-block;
+}
+
+.search-box img {
+    width: 5%;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.user-list {
+    min-height: 50px;
+    background-color: white;
+}
+
+.user-list-image {
+    display: inline-block;
+    max-width: 20%;
+}
+
+.user-list-image img {
+    width: 100%;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.user-list-box {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 8px;
+}
+
+.user-list-name {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.user-date {
+    display: inline-block;
+    font-size: 9px;
+    color: rgb(187, 184, 184);
+    margin-left: 100px;
+}
+
+.user-message {
+    margin-left: 8px;
+    font-size: 12px;
+    color: rgb(187, 184, 184);
+}
+
+.user-list-image-final {
+    display: inline-block;
+    max-width: 20%;
+}
+
+.user-list-image-final img {
+    width: 100%;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.user-list-box-final {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 200px;
+}
+
+.user-list-name-final {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.user-date-final {
+    display: inline-block;
+    font-size: 9px;
+    color: rgb(187, 184, 184);
+    margin-left: 100px;
+}
+
+.user-message-final {
+    margin-left: 8px;
+    font-size: 12px;
+    color: rgb(187, 184, 184);
+}
 
 /*************************Sezione ID */
 
