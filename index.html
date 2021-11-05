@@ -13,15 +13,17 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/localizedFormat.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
     <title>Vue Boolzapp</title>
 </head>
 <body>
-    <header></header>
+    <div class="green-screen"></div>
     <main id="app">
-        <div class="green-screen"></div>
         <section class="chatbox container">
             <div class="main-window">
-                <aside class="chatlist">
+                <aside class="chatlist flex-section">
                     <div class="user-account">
                         <div class="user-account-image py-2 px-2">
                             <img src="img/avatar_io.jpg" alt="My_Avatar">
@@ -46,44 +48,47 @@
                     </div>
                     <div class="search-box">
                         <img src="img/search.png" alt="search">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="filtro" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="user-list">
-                        <div class="user-list-image py-2 px-2">
-                            <img src="img/avatar_1.jpg" alt="Avatar1">
-                        </div>
-                        <div class="user-list-box">
-                            <div class="user-list-name">Michele</div>
-                            <div class="user-date">10/01/2020 16:15:22</div>
-                            <div class="user-message">Tutto fatto!</div>
-                        </div>
-                        <div class="user-list-image py-2 px-2">
-                            <img src="img/avatar_2.jpg" alt="Avatar2">
-                        </div>
-                        <div class="user-list-box">
-                            <div class="user-list-name">Fabio</div>
-                            <div class="user-date">20/03/2020 16:35:00</div>
-                            <div class="user-message">Mi piacerebbe ma devo andare a ...</div>
-                        </div>
-                        <div class="user-list-image py-2 px-2">
-                            <img src="img/avatar_3.jpg" alt="Avatar3">
-                        </div>
-                        <div class="user-list-box">
-                            <div class="user-list-name">Samuele</div>
-                            <div class="user-date">28/03/2020 16:15:22</div>
-                            <div class="user-message">Ah scusa! ...</div>
-                        </div>
-                        <div class="user-list-image-final py-2 px-2">
-                            <img src="img/avatar_4.jpg" alt="Avatar4">
-                        </div>
-                        <div class="user-list-box-final">
-                            <div class="user-list-name-final">Luisa</div>
-                            <div class="user-date-final">10/01/2020 15:50:00</div>
-                            <div class="user-message-final">Si ma preferirei andare al ci...</div>
+                        <div v-for="chat in chatFiltrate()" @click="chatClick(chat)">
+                            <div class="user-list-image py-2 px-2">
+                                <img :src="nuovoImgPath(chat.avatar)" alt="Avatar1">
+                            </div>
+                            <div class="user-list-box">
+                                <div class="user-list-name">{{ chat.nome }}</div>
+                                <div class="user-message">{{ ultimoMessaggio(chat.messaggi) }}</div>
+                            </div>
                         </div>
                     </div>
                 </aside>
-                <div></div>
+                <div class="chat-container flex-section">
+                    <div class="user-account">
+                        <div class="user-account-image py-2 px-2">
+                            <img :src="nuovoImgPath(chatAttive.avatar)" alt="UserAvatar">
+                        </div>
+                        <div class="user-account-name">
+                        {{chatAttive.nome}}<br>
+                        <p>Ultimo accesso oggi alle</p>
+                        </div>
+                    </div>
+                    <div class="mex-container" ref="mex-Container">
+                        <div v-for="msg in chatAttive.messaggi" :class="msg.status" class="msg-container">
+                            <div class="card" tabindex="0">
+                            <div class="card-text">{{msg.text}}</div>
+                            <div class="position-absolute" style="right: 4px; bottom: 2px">
+                                {{ msg.data }}
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+              
+                      <div class="reply-container">
+                        <input type="text" class="form-control form-control-lg"
+                          placeholder="Nuovo messaggio..." v-model="nuoviMessaggi"
+                          @keyup.enter="submitClick">
+                      </div>
+                </div>
             </div>
         </section>
     </main>
