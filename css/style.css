@@ -167,14 +167,10 @@ input {
 
 .msg-container.received .card {
     background-color: white;
-    transform: translateX(-150%);
-    animation: fromLeft 0.3s both .3S;
 }
 
 .msg-container.sent {
     text-align: right;
-    transform: translateX(150%);
-    animation: fromRight 0.3s both .3S;
 }
 
 .msg-container.sent .card {

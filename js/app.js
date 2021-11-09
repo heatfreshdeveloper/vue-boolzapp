@@ -97,7 +97,7 @@ dayjs.extend(window.dayjs_plugin_relativeTime);
             },
             methods: {
                 nuovoImgPath(avatar) {
-                    return `../img/${avatar}.jpg`;
+                    return `img/${avatar}.jpg`;
                 },
                 ultimoMessaggio(messaggi) {
                     if (messaggi.length === 0) {
